@@ -5,10 +5,10 @@ from xgboost import XGBClassifier
 test = pd.read_csv('cybersecurity_test.csv', sep = '|')
 train = pd.read_csv('cybersecurity_training.csv', sep = '|')
 
+# Data preprocessing
+
 train = train[train.select_dtypes(np.number).columns.tolist()]
 test = test[test.select_dtypes(np.number).columns.tolist()]
-
-# Data preprocessing
 
 x = train[train.columns.drop('notified')]
 y = train['notified']
